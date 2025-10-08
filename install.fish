@@ -1,9 +1,9 @@
 # Download Latest Neovim Configs
 echo "Downloading Latest Neovim Configs..."
 if ls ~/.dotfiles/.config/nvim | grep lua >> /dev/null
-    git -C $HOME/.dotfiles submodule update --recursive --remote
+    git -C $HOME/.dotfiles submodule update --recursive --remote >> /dev/null
 else
-    git -C $HOME/.dotfiles submodule update --init --recursive
+    git -C $HOME/.dotfiles submodule update --init --recursive >> /dev/null
 end
 
 # Remove Old config.fish
