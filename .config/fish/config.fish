@@ -36,7 +36,9 @@ if type -q vivid
 end
 
 ### Zellij
-if status is-interactive
-    set ZELLIJ_AUTO_EXIT true
-    eval (zellij setup --generate-auto-start fish | string collect)
+if type -q zellij
+    if status is-interactive
+        set ZELLIJ_AUTO_EXIT true
+        eval (zellij setup --generate-auto-start fish | string collect)
+    end
 end
