@@ -1,6 +1,6 @@
 # Download Latest Neovim Configs
 echo "Downloading Latest Neovim Configs..."
-if ls ~/.dotfiles/.config/nvim
+if ls ~/.dotfiles/.config/nvim | grep lua >> /dev/null
     git -C $HOME/.dotfiles submodule update --recursive --remote
 else
     git -C $HOME/.dotfiles submodule update --init --recursive
@@ -36,7 +36,7 @@ if lsb_release -a | grep "Ubuntu" >> /dev/null
         curl -sLO "https://github.com/zellij-org/zellij/releases/latest/download/zellij-aarch64-unknown-linux-musl.tar.gz"
         tar -xf zellij-aarch64-unknown-linux-musl.tar.gz
         rm zellij-aarch64-unknown-linux-musl.tar.gz
-        echo "Move zellij to /bin"
+        echo "Run \"sudo mv zellij /bin/zellij\" to Install Zellij"
     end
 end
 
