@@ -1,0 +1,82 @@
+// Define plugins
+plugins {
+    // Autolock
+    autolock location="https://github.com/fresh2dev/zellij-autolock/releases/latest/download/zellij-autolock.wasm" {
+        triggers "nvim"
+        watch_interval "1.0"
+    }
+
+    // Session Manager
+    session-manager location="zellij:session-manager"
+}
+
+// Load plugins
+load_plugins {
+    autolock
+    session-manager
+}
+
+// Custom keybinds, removing defaults
+keybinds clear-defaults=true {
+    // Normal mode keybinds
+    normal {
+        // Intercept Enter
+        bind "Enter" {
+            WriteChars "\u{000D}";
+            MessagePlugin "autolock" {};
+        }
+
+        // Open session Manager
+        bind "Ctrl s" {
+            LaunchOrFocusPlugin "zellij:session-manager" {
+                floating true
+                move_to_focused_tab true
+            }
+        }
+
+        // Vim style movement
+        bind "Ctrl h" {
+            MoveFocusOrTab "Left";
+        }
+        bind "Ctrl l" {
+            MoveFocusOrTab "Right";
+        }
+        bind "Ctrl j" {
+            MoveFocus "Down";
+        }
+        bind "Ctrl k" {
+            MoveFocus "Up";
+        }
+    }
+
+    // Shared keybinds
+    shared {
+        // Create new pane
+        bind "Ctrl enter" {
+            NewPane;
+        }
+
+        // Close focused pane
+        bind "Ctrl backspace" {
+            CloseFocus;
+        }
+
+        // Create new tab
+        bind "Ctrl t" {
+            NewTab;
+        }
+
+        // Go to next tab
+        bind "Alt tab" {
+            GoToNextTab;
+        }
+    }
+}
+
+// Visual
+theme "tokyonight_night"
+
+// General functionality
+advanced_mouse_actions false
+show_startup_tips false
+on_force_close "quit"
