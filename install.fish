@@ -13,7 +13,7 @@ rm ~/.config/fish/config.fish
 # Download Fish Theme
 echo "Downloading Fish Theme..."
 mkdir ~/.config/fish/themes
-curl https://raw.githubusercontent.com/folke/tokyonight.nvim/refs/heads/main/extras/fish_themes/tokyonight_night.theme >> ~/.config/fish/themes/tokyonight_night.theme
+curl -s https://raw.githubusercontent.com/folke/tokyonight.nvim/refs/heads/main/extras/fish_themes/tokyonight_night.theme >> ~/.config/fish/themes/tokyonight_night.theme
 
 # Download Fisher
 echo "Downloading Fisher..."
@@ -30,10 +30,10 @@ set tide_os_color $os_branding_color
 set tide_os_icon "$tide_os_icon "
 
 # Download Zellij on Ubuntu
-if (lsb_release -a | grep "Ubuntu" >> /dev/null)
+if lsb_release -a | grep "Ubuntu" >> /dev/null
     if type -q zellij; else
         echo "Downloading Zellij..."
-        curl -LO "https://github.com/zellij-org/zellij/releases/latest/download/zellij-aarch64-unknown-linux-musl.tar.gz"
+        curl -sLO "https://github.com/zellij-org/zellij/releases/latest/download/zellij-aarch64-unknown-linux-musl.tar.gz"
         tar -xf zellij-aarch64-unknown-linux-musl.tar.gz
         rm zellij-aarch64-unknown-linux-musl.tar.gz
         echo "Move zellij to /bin"
