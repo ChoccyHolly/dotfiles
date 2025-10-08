@@ -1,3 +1,6 @@
+# Remove Old config.fish
+rm ~/.config/fish/config.fish
+
 # Download Theme
 mkdir ~/.config/fish/themes
 curl https://raw.githubusercontent.com/folke/tokyonight.nvim/refs/heads/main/extras/fish_themes/tokyonight_night.theme >> ~/.config/fish/themes/tokyonight_night.theme
