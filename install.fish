@@ -1,20 +1,10 @@
 # Init Neovim Submodule
 git submodule update --init --recursive
 
-# Install Zellij on Ubuntu
-if lsb_release -a | grep "Ubuntu"
-    if type -q zellij; else
-        curl -LO "https://github.com/zellij-org/zellij/releases/latest/download/zellij.tar.gz"
-        tar -xf zellij-aarch64-unknown-linux-musl.tar.gz
-        rm zellij-aarch64-unknown-linux-musl.tar.gz
-        echo "Move zellij to /bin"
-    end
-end
-
 # Remove Old config.fish
 rm ~/.config/fish/config.fish
 
-# Download Theme
+# Download Fish Theme
 mkdir ~/.config/fish/themes
 curl https://raw.githubusercontent.com/folke/tokyonight.nvim/refs/heads/main/extras/fish_themes/tokyonight_night.theme >> ~/.config/fish/themes/tokyonight_night.theme
 
@@ -29,3 +19,20 @@ set tide_right_prompt_items
 set tide_context_always_display true
 set tide_os_color $os_branding_color
 set tide_os_icon "$tide_os_icon "
+
+# Download Zellij on Ubuntu
+if lsb_release -a | grep "Ubuntu"
+    if type -q zellij; else
+        curl -LO "https://github.com/zellij-org/zellij/releases/latest/download/zellij.tar.gz"
+        tar -xf zellij-aarch64-unknown-linux-musl.tar.gz
+        rm zellij-aarch64-unknown-linux-musl.tar.gz
+        echo "Move zellij to /bin"
+    end
+end
+
+# Stow Dotfiles
+stow ~/.dotfiles
+rm ~/install.fish
+
+# List Programs
+echo "Remember to install Neovim, Zellij, Eza, and Vivid"
