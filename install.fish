@@ -1,5 +1,5 @@
 # Init Neovim Submodule
-git --git-dir=$HOME/.dotfiles submodule update --init --recursive
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME/.dotfiles submodule update --init --recursive
 
 # Remove Old config.fish
 rm ~/.config/fish/config.fish
@@ -31,7 +31,7 @@ if lsb_release -a | grep "Ubuntu"
 end
 
 # Stow Dotfiles
-stow ~/.dotfiles
+stow -d ~/.dotfiles .
 rm ~/install.fish
 
 # List Programs
