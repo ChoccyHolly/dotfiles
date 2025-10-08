@@ -1,5 +1,5 @@
 # Init Neovim Submodule
-git submodule update --init --recursive
+git --git-dir=$HOME/.dotfiles submodule update --init --recursive
 
 # Remove Old config.fish
 rm ~/.config/fish/config.fish
@@ -23,7 +23,7 @@ set tide_os_icon "$tide_os_icon "
 # Download Zellij on Ubuntu
 if lsb_release -a | grep "Ubuntu"
     if type -q zellij; else
-        curl -LO "https://github.com/zellij-org/zellij/releases/latest/download/zellij.tar.gz"
+        curl -LO "https://github.com/zellij-org/zellij/releases/latest/download/zellij-aarch64-unknown-linux-musl.tar.gz"
         tar -xf zellij-aarch64-unknown-linux-musl.tar.gz
         rm zellij-aarch64-unknown-linux-musl.tar.gz
         echo "Move zellij to /bin"
