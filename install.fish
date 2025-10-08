@@ -1,5 +1,5 @@
 # Init Neovim Submodule
-git --git-dir=$HOME/.dotfiles --work-tree=$HOME/.dotfiles submodule update --init --recursive
+git -C $HOME/.dotfiles submodule update --init --recursive
 
 # Remove Old config.fish
 rm ~/.config/fish/config.fish
