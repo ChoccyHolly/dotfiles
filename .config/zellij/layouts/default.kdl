@@ -10,8 +10,8 @@ layout {
 
                 hide_frame_for_single_pane "true"
 
-                mode_normal  "#[fg=blue,bg=#16161e]#[fg=#16161e,bg=blue] NORMAL "
-                mode_locked  "#[fg=green,bg=#16161e]#[fg=#16161e,bg=green] LOCKED "
+                mode_normal  "#[fg=blue,bg=#16161e]#[fg=#16161e,bg=blue,bold] NORMAL "
+                mode_locked  "#[fg=green,bg=#16161e]#[fg=#16161e,bg=green,bold] LOCKED "
 
                 tab_normal   "#[bg=#3b4261] {name} "
                 tab_active   "#[fg=blue,bg=#3b4261] {name} "
