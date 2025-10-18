@@ -25,7 +25,6 @@ fisher install IlanCosman/tide@v6 >> /dev/null
 tide configure --auto --style=Classic --prompt_colors='16 colors' --show_time=No --classic_prompt_separators=Angled --powerline_prompt_heads=Round --powerline_prompt_tails=Round --powerline_prompt_style='Two lines, character and frame' --prompt_connection=Disconnected --powerline_right_prompt_frame=No --prompt_spacing=Compact --icons='Many icons' --transient=No
 set tide_left_prompt_items os context pwd git newline character
 set tide_right_prompt_items
-set tide_context_always_display true
 set tide_os_color $os_branding_color
 set tide_os_icon "$tide_os_icon "
 
