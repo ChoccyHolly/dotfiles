@@ -79,4 +79,5 @@ theme "tokyonight_night"
 // General functionality
 advanced_mouse_actions false
 show_startup_tips false
+session_serialization false
 on_force_close "quit"
