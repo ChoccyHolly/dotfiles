@@ -25,6 +25,9 @@ layout {
                 command "nvim"
             }
             pane split_direction="horizontal" {
+                pane size="50%" {
+                    name "Terminal"
+                }
                 pane size="25%" {
                     name "Build"
                     command "npm"
@@ -36,9 +39,6 @@ layout {
                     command "npm"
                     args "start"
                     start_suspended true
-                }
-                pane size="50%" {
-                    name "Terminal"
                 }
             }
         }
