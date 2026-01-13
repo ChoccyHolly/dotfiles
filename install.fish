@@ -27,6 +27,7 @@ set tide_left_prompt_items os context pwd git newline character
 set tide_right_prompt_items
 set tide_os_color $os_branding_color
 set tide_os_icon "$tide_os_icon "
+set tide_character_vi_icon_default "❯"
 
 # Download Zellij on Ubuntu
 if lsb_release -a | grep "Ubuntu" >> /dev/null
